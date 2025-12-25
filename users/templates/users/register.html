@@ -1,0 +1,44 @@
+{% extends 'users/base.html' %} {% load static %} {% block content %}
+<form method="post">
+  {% csrf_token %}
+  <div>
+    <label for="email">Email Address</label>
+    <input id="email" type="email" name="email" placeholder="me@example.com" required />
+  </div>
+
+  <div>
+    <label for="username">Username</label>
+    <input id="username" type="text" name="user_name" placeholder="Username" required />
+  </div>
+
+  <div>
+    <label for="firstname">First name</label>
+    <input id="firstname" type="text" name="first_name" placeholder="First name" required />
+  </div>
+
+  <div>
+    <label for="password">Password</label>
+    <input id="password" type="password" name="password1" placeholder="********" required />
+  </div>
+
+  <div>
+    <label for="password">Confirm Password</label>
+    <input id="password" type="password" name="password2" placeholder="********" required />
+  </div>
+
+  {% for field in registration_form %}
+  <p>
+    {% for error in field.errors %}
+    <p class="error-color">{{ error }}</p>
+    {% endfor %}
+  </p>
+  {% endfor %}
+  {% if registration_form.non_field_errors %}
+  <div class="error-color">
+    <p>{{ registration_form.non_field_errors }}</p>
+  </div>
+  {% endif %}
+
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up now</button>
+</form>
+{% endblock %}

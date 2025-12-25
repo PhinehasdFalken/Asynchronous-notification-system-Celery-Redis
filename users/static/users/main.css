@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 24px;
+  font-family: sans-serif;
+  color: #333;
+  background-color: #f2f2f2;
+}
+
+.container {
+  margin: 20px auto;
+  /* background-color: aquamarine; */
+}
+
+.error-color {
+  color: red;
+}
+
+.extra-top {
+  margin-top: 150px;
+}
+
+.bg-steel {
+  background-color: #5f788a;
+}
+
+.profile-img {
+  height: 50px !important;
+  width: 50px !important;
+  border-radius: 50px !important;
+}
